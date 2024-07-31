@@ -1,0 +1,12 @@
+{
+    "editor.fontSize": 16,
+    "editor.fontFamily": "'Fire Code', Menlo, Monaco, 'Courier New', monospace",
+    "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+    },
+    "javascript.preferences.quoteStyle": "single",
+    "typescript.preferences.quoteStyle": "single",
+    "editor.renderWhitespace": "boundary",
+    "prettier.semi": false,
+    "prettier.singleQuote": true
+}
