@@ -14,7 +14,7 @@ describe('SignUp Controller', () => {
     }
     const httpResponse = sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(400)
-    expect(httpResponse.body).toEqual(new MissingParamError('code invitation'))
+    expect(httpResponse.body).toEqual(new MissingParamError('codeInvitation'))
   })
 
   it('should return 400 if no name is provided', () => {
