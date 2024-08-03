@@ -1,7 +1,7 @@
 import { type AccountModel } from '@/domain/models'
 
 export interface CreateAccount {
-  create: (account: CreateAccountModel) => AccountModel
+  create: (account: CreateAccountModel) => Promise<AccountModel>
 }
 
 export interface CreateAccountModel {
