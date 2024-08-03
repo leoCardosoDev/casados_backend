@@ -2,7 +2,7 @@ import { type CreateAccount, type CreateAccountModel } from '@/domain/usecases'
 import { type AccountModel } from '@/domain/models'
 import { SignUpController } from '@/presentation/controllers/signup'
 import { InvalidParamError, MissingParamError, ServerError } from '@/presentation/errors'
-import { type EmailValidator } from '@/presentation/protocols'
+import { type EmailValidator } from '@/validation/protocols'
 
 const makeEmailValidation = (): EmailValidator => {
   class EmailValidatorStub implements EmailValidator {
