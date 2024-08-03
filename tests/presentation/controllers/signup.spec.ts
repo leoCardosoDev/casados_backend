@@ -163,23 +163,23 @@ describe('SignUp Controller', () => {
     expect(httpResponse.statusCode).toBe(500)
     expect(httpResponse.body).toEqual(new ServerError())
   })
-})
 
-it('should call CreateAccount with correct values', () => {
-  const { sut, createAccountStub } = makeSut()
-  const createSpy = jest.spyOn(createAccountStub, 'create')
-  const httpRequest = {
-    body: {
+  it('should call CreateAccount with correct values', () => {
+    const { sut, createAccountStub } = makeSut()
+    const createSpy = jest.spyOn(createAccountStub, 'create')
+    const httpRequest = {
+      body: {
+        name: 'any_name',
+        email: 'any_email@mail.com',
+        password: 'any_password',
+        passwordConfirmation: 'any_password'
+      }
+    }
+    sut.handle(httpRequest)
+    expect(createSpy).toHaveBeenCalledWith({
       name: 'any_name',
       email: 'any_email@mail.com',
-      password: 'any_password',
-      passwordConfirmation: 'any_password'
-    }
-  }
-  sut.handle(httpRequest)
-  expect(createSpy).toHaveBeenCalledWith({
-    name: 'any_name',
-    email: 'any_email@mail.com',
-    password: 'any_password'
+      password: 'any_password'
+    })
   })
 })
