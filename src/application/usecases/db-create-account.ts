@@ -1,6 +1,6 @@
 import { type AccountModel } from '@/domain/models'
 import { type CreateAccountModel } from '@/domain/usecases'
-import { type Encrypter } from '../protocols'
+import { type Encrypter } from '@/application/protocols'
 
 export class DbCreateAccount {
   constructor (private readonly encrypter: Encrypter) { }
