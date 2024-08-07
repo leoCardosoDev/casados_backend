@@ -84,4 +84,17 @@ describe('DbCreateAccount Usecases', () => {
       password: 'hashed_password'
     })
   })
+
+  // Teste para garantir que caso o encrypter retorne uma Exception, que seja tratada por quem chamou e não aqui
+  it('should throws if CreateAccountRepository throws', async () => {
+    const { sut, createAccountRepositoryStub } = makeSut()
+    jest.spyOn(createAccountRepositoryStub, 'create').mockRejectedValueOnce(new Error())
+    const accountData = {
+      name: 'valid_name',
+      email: 'valid_email@mail.com',
+      password: 'valid_password'
+    }
+    const promise = sut.create(accountData)
+    await expect(promise).rejects.toThrow()
+  })
 })
