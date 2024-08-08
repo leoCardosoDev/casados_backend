@@ -40,6 +40,8 @@
     "typescript": "^5.5.4"
   },
   "dependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "bcrypt": "^5.1.1",
     "module-alias": "^2.2.3",
     "rimraf": "^6.0.1",
     "validator": "^13.12.0"
